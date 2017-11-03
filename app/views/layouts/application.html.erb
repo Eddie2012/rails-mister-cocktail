@@ -4,14 +4,26 @@
   <title>RailsMisterCocktail</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= cloudinary_js_config %>
+
 </head>
 
-<body>
+<body style="background-image: linear-gradient(-225deg, rgba(232, 92, 32, 0.6) 0%, rgba(242, 187, 186, 0.6) 75%)">
+
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(232, 92, 32,0.6) 0%, rgba(242, 187, 186,0.6) 50%), url('<%= cl_image_path @product.photo.path, height: 300, width: 400, crop: :fill %>')">
+    <div class="banner-content">
+      <h1>1920's</h1>
+      <p>gentlemen's bar</p>
+      <a href="" class="btn-yours">join our newsletter</a>
+    </div>
+  </div>
+
   <%= yield %>
 </body>
 </html>
